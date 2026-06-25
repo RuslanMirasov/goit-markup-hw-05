@@ -1,0 +1,19 @@
+.features {
+  display: flex;
+  gap: 24px;
+}
+
+.feature-item {
+  width: calc((100% - 72px) / 4);
+}
+
+.feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 112px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  background-color: var(--cloud);
+  border: 1px solid var(--light-slate);
+}
