@@ -29,6 +29,9 @@
   align-items: center;
   align-content: center;
   gap: 24px;
+}
+
+.description .socials {
   margin-top: 8px;
 }
 

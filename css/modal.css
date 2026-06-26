@@ -1,0 +1,200 @@
+.backdrop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--navy-blue-modal);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity var(--transition),
+    visibility var(--transition);
+}
+
+.backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modal {
+  width: 100%;
+  max-width: 408px;
+  max-height: 80%;
+  background-color: var(--dairy);
+  border-radius: 4px;
+  padding: 24px;
+  overflow-y: auto;
+  transition: transform var(--transition);
+  transform: scale(0.8);
+  box-shadow:
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12),
+    0px 2px 1px 0px rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-open .modal {
+  transform: scale(1);
+}
+
+.modal-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  border: 1px solid var(--navy-blue-modal);
+  background-color: var(--cornflower);
+  margin-left: auto;
+  color: var(--navy-blue);
+  transition:
+    color var(--transition),
+    border var(--transition),
+    background-color var(--transition);
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  border: 1px solid var(--ocean);
+  background-color: var(--ocean);
+  color: var(--white);
+}
+
+.modal-close-icon {
+  fill: currentColor;
+}
+
+.modal-title {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 24px;
+  letter-spacing: 0.02em;
+  color: var(--navy-blue);
+}
+
+.modal-form {
+  margin-top: 16px;
+}
+
+.label {
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.04em;
+  color: var(--light-slate);
+  margin-bottom: 4px;
+}
+
+.input-wrapper {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.input {
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid var(--navy-blue-modal);
+  background: none;
+  color: var(--navy-blue);
+  padding-left: 38px;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  outline: none;
+  transition: border var(--transition);
+}
+
+.input::placeholder {
+  color: var(--navy-blue-modal);
+}
+
+.input-textarea {
+  display: block;
+  height: 120px;
+  padding: 8px 16px;
+  resize: none;
+}
+
+.input:focus {
+  border: 1px solid var(--iris);
+}
+
+.input-icon {
+  position: absolute;
+  left: 16px;
+  top: 8px;
+  transition: fill var(--transition);
+  fill: var(--navy-blue);
+}
+
+.input:focus + .input-icon {
+  fill: var(--iris);
+}
+
+.button--send {
+  display: block;
+  min-width: 169px;
+  margin: 24px auto 0px auto;
+}
+
+.checkbox {
+  display: none;
+}
+
+.chechbox-label {
+  display: flex;
+  margin-top: 16px;
+}
+
+.chechbox-box {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--navy-blue-modal);
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 2px;
+  margin-right: 8px;
+  transition:
+    border var(--transition),
+    background-color var(--transition);
+}
+
+.checkbox:checked + .chechbox-label .chechbox-box {
+  border: 1px solid var(--ocean);
+  background-color: var(--ocean);
+}
+
+.chechbox-icon {
+  fill: var(--cloud);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.checkbox:checked + .chechbox-label .chechbox-icon {
+  opacity: 1;
+}
+
+.chechbox-label-text {
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.04em;
+  color: var(--light-slate);
+}
+
+.chechbox-label-text a {
+  line-height: 1.33;
+  color: var(--iris);
+  text-decoration: underline;
+}
