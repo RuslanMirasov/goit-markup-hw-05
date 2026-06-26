@@ -57,13 +57,13 @@
   color: var(--navy-blue);
   transition:
     color var(--transition),
-    border var(--transition),
+    border-color var(--transition),
     background-color var(--transition);
 }
 
 .modal-close:hover,
 .modal-close:focus {
-  border: 1px solid var(--ocean);
+  border-color: var(--ocean);
   background-color: var(--ocean);
   color: var(--white);
 }
@@ -87,8 +87,9 @@
 }
 
 .label {
+  display: block;
   font-size: 12px;
-  line-height: 1.16;
+  line-height: 1.17;
   letter-spacing: 0.04em;
   color: var(--light-slate);
   margin-bottom: 4px;
@@ -108,16 +109,17 @@
   color: var(--navy-blue);
   padding-left: 38px;
   font-size: 12px;
-  letter-spacing: 0.02em;
+  line-height: 2;
+  letter-spacing: 0.04em;
   outline: none;
-  transition: border var(--transition);
+  transition: border-color var(--transition);
 }
 
 .input::placeholder {
   color: var(--navy-blue-modal);
 }
 
-.input-textarea {
+.input.input-textarea {
   display: block;
   height: 120px;
   padding: 8px 16px;
@@ -125,25 +127,44 @@
 }
 
 .input:focus {
-  border: 1px solid var(--iris);
+  border-color: var(--iris);
 }
 
 .input-icon {
   position: absolute;
   left: 16px;
-  top: 8px;
-  transition: fill var(--transition);
+  top: 50%;
+  transform: translateY(-50%);
   fill: var(--navy-blue);
+  transition: fill var(--transition);
 }
 
 .input:focus + .input-icon {
   fill: var(--iris);
 }
 
-.button--send {
+.button-send {
   display: block;
-  min-width: 169px;
-  margin: 24px auto 0px auto;
+  width: 169px;
+  margin: 0 auto;
+  margin-top: 24px;
+  color: var(--white);
+  background-color: var(--iris);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  transition: background-color var(--transition);
+}
+
+.button-send:hover,
+.button-send:focus,
+.button-send:active {
+  background-color: var(--ocean);
 }
 
 .checkbox {
@@ -167,12 +188,12 @@
   border-radius: 2px;
   margin-right: 8px;
   transition:
-    border var(--transition),
+    border-color var(--transition),
     background-color var(--transition);
 }
 
 .checkbox:checked + .chechbox-label .chechbox-box {
-  border: 1px solid var(--ocean);
+  border-color: var(--ocean);
   background-color: var(--ocean);
 }
 
@@ -188,7 +209,7 @@
 
 .chechbox-label-text {
   font-size: 12px;
-  line-height: 1.16;
+  line-height: 1.17;
   letter-spacing: 0.04em;
   color: var(--light-slate);
 }
