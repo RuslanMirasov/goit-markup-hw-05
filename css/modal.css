@@ -124,6 +124,7 @@
   height: 120px;
   padding: 8px 16px;
   resize: none;
+  line-height: 1.17;
 }
 
 .input:focus {
@@ -215,7 +216,7 @@
 }
 
 .chechbox-label-text a {
-  line-height: 1.33;
+  line-height: 1.17;
   color: var(--iris);
   text-decoration: underline;
 }
